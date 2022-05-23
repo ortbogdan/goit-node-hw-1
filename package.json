@@ -20,5 +20,9 @@
   "homepage": "https://github.com/ortbogdan/goit-node-hw-1#readme",
   "devDependencies": {
     "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "yargs": "^17.5.1"
   }
 }
