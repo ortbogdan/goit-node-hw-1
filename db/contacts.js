@@ -8,7 +8,6 @@ async function listContacts() {
   // ...твой код
   try {
     const data = await fs.readFile(contactsPath, 'utf-8');
-    // console.log(JSON.parse(data));
     return JSON.parse(data)
   } catch (error) {
     console.log(error.message);
@@ -29,9 +28,6 @@ async function getContactById(contactId) {
 async function removeContact(contactId) {
   // ...твой код
   const contacts = await listContacts();
-  // const updatedContacts = contacts.filter(({ id }) => id !== contactId.toString());
-  // fs.writeFile(contactsPath, JSON.stringify(updatedContacts), 'utf-8');
-  // return
   const idx = contacts.findIndex(({id}) => id === contactId.toString());
   if (idx === -1) {
     return null;
@@ -42,10 +38,6 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // ...твой код
-  // if (arguments.length === 0) {
-  //   return console.log("Please add some contact data");
-  // }
   const contacts = await listContacts();
   const contact = { name, email, phone, id: v4() };
   contacts.push(contact);
